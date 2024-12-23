@@ -34,14 +34,7 @@ utterances = {
     ],
 }
 
-
-def main():
-    print("Hello from prouting!")
-
-
 if __name__ == "__main__":
-    main()
-
     prouter = Prouter(utterances, embeddings_model)
-
-    print(prouter.predict_route("hey how's it going?"))
+    print(prouter.predict_route("when should we have lunch?"))
+    # {'greetings': np.float64(0.303), 'advice': np.float64(0.308), 'calendar': np.float64(0.389)}
