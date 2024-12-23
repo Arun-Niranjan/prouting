@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "Probabilistic Routing using embeddings"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["langchain-openai>=0.2.14", "langchain>=0.3.13"]
+dependencies = [
+    "langchain-openai>=0.2.14",
+    "langchain>=0.3.13",
+    "numpy>=2.2.1",
+]
 
 [tool.pyright]
 venvPath = "."
