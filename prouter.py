@@ -11,7 +11,7 @@ class Prouter:
         embedder: OpenAIEmbeddings,
         use_pca: bool = True,
     ):
-        self.embbeder = embedder
+        self.embedder = embedder
         embedded_utterances = {}
         for route, values in utterances.items():
             embedded_utterances[route] = embedder.embed_documents(utterances[route])
@@ -30,7 +30,7 @@ class Prouter:
                     )
 
     def _get_distances(self, input: str) -> Dict[str, float]:
-        embedded_input = np.array(self.embbeder.embed_query(input))
+        embedded_input = np.array(self.embedder.embed_query(input))
         if self.use_pca:
             embedded_input = self.pca.transform(embedded_input.reshape(-1, 1).T)
         res = {}
